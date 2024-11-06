@@ -43,6 +43,9 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     List<TotalDocument> totalDocuments = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    List<TotalInterview> totalInterviews = new ArrayList<>();
+
     public static User createUser(String nickname, Long kakaoId) {
         User user = new User();
         user.nickname = nickname;
