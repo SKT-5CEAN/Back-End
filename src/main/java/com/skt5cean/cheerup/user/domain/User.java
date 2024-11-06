@@ -1,7 +1,9 @@
 package com.skt5cean.cheerup.user.domain;
 
+import com.skt5cean.cheerup.company.domain.Company;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -26,11 +28,35 @@ public class User implements UserDetails {
 
     private String nickname;
 
+    @Setter
+    private String goal;
+
+    private String keyword1;
+
+    private String keyword2;
+
+    private String keyword3;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    List<Company> companies = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    List<TotalDocument> totalDocuments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    List<TotalInterview> totalInterviews = new ArrayList<>();
+
     public static User createUser(String nickname, Long kakaoId) {
         User user = new User();
         user.nickname = nickname;
         user.kakaoId = kakaoId;
         return user;
+    }
+
+    public void updateKeywords(String keyword1, String keyword2, String keyword3){
+        this.keyword1 = keyword1;
+        this.keyword2 = keyword2;
+        this.keyword3 = keyword3;
     }
 
     //Jwt 설정을 위한 UserDetails 메소드
