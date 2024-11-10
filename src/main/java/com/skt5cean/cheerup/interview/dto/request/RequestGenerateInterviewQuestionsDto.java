@@ -13,16 +13,16 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GenerateInterviewQuestionsDto {
+public class RequestGenerateInterviewQuestionsDto {
     private List<String> contexts;
 
-    public static GenerateInterviewQuestionsDto from(Company company) {
+    public static RequestGenerateInterviewQuestionsDto from(Company company) {
         List<Resume> resumes = company.getResumes();
         List<String> formattedList = new ArrayList<>();
         for (Resume resume : resumes) {
             formattedList.add(String.format("%s:%s", resume.getTitle(), resume.getContents()));
         }
-        return new GenerateInterviewQuestionsDto(formattedList);
+        return new RequestGenerateInterviewQuestionsDto(formattedList);
     }
 
 }
