@@ -31,6 +31,10 @@ public class Company {
     @OneToMany(mappedBy = "company", cascade = CascadeType.REMOVE)
     private List<Step> steps = new ArrayList<>();
 
+    // 해당 기업의 면접 질문 - 답변
+    @OneToMany(mappedBy = "company", cascade = CascadeType.REMOVE)
+    private List<Interview> interviews = new ArrayList<>();
+
     // 회사명
     @Column(nullable = false)
     private String companyName;
