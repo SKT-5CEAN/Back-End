@@ -25,4 +25,11 @@ public class Interview extends Document {
 //    @Column(name = "state", nullable = false)
 //    private StateType state;
 
+    public static Interview createInterview(Company company, String title, String contents) {
+        Interview interview = new Interview();
+        interview.company = company;
+        interview.title = title;
+        interview.contents = contents;
+        return interview;
+    }
 }
