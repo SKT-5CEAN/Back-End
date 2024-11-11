@@ -9,4 +9,5 @@ public interface InterviewRepository extends JpaRepository<Interview, Long> {
 
     List<Interview> findAllByCompanyId(Long companyId);
     List<Interview> findAllByCompanyIdAndState(Long companyId, Interview.StateType state);
+
 }
