@@ -1,28 +1,18 @@
 package com.skt5cean.cheerup.interview.dto.request;
 
-
-import com.skt5cean.cheerup.company.domain.Company;
-import com.skt5cean.cheerup.company.domain.Resume;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestGenerateInterviewQuestionsDto {
-    private List<String> contexts;
+    private Long companyId;
 
-    public static RequestGenerateInterviewQuestionsDto from(Company company) {
-        List<Resume> resumes = company.getResumes();
-        List<String> formattedList = new ArrayList<>();
-        for (Resume resume : resumes) {
-            formattedList.add(String.format("%s:%s", resume.getTitle(), resume.getContents()));
-        }
-        return new RequestGenerateInterviewQuestionsDto(formattedList);
+    public static RequestGenerateInterviewQuestionsDto of(Long companyId) {
+        return new RequestGenerateInterviewQuestionsDto(companyId);
     }
 
 }
