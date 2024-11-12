@@ -12,6 +12,7 @@ public enum ResponseCode {
     // 400 Bad Request
     BAD_REQUEST(HttpStatus.BAD_REQUEST, false, "잘못된 요청입니다."),
     FILE_UPLOAD_FAILED(HttpStatus.BAD_REQUEST, false, "파일 업로드에 실패하였습니다."),
+    NO_INTERVIEW_QUESTIONS_GENERATED(HttpStatus.BAD_REQUEST,false, "면접 예상 질문 생성에 실패하였습니다." ),
 
     // 401 Unauthorized
 
@@ -29,9 +30,12 @@ public enum ResponseCode {
     USER_READ_SUCCESS(HttpStatus.OK, true, "사용자 조회 성공"),
     USER_UPDATE_SUCCESS(HttpStatus.OK, true, "사용자 수정 성공"),
     USER_DELETE_SUCCESS(HttpStatus.OK, true, "사용자 삭제 성공"),
+    INTERVIEW_GENERATION_SUCCESS(HttpStatus.OK, true, "인터뷰 생성 성공"),
 
     // 201 Created
     USER_CREATE_SUCCESS(HttpStatus.CREATED, true, "사용자 생성 성공");
+
+
 
 
     private final HttpStatus httpStatus;
