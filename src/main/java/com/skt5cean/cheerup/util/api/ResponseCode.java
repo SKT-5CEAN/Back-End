@@ -29,6 +29,18 @@ public enum ResponseCode {
     USER_READ_SUCCESS(HttpStatus.OK, true, "사용자 조회 성공"),
     USER_UPDATE_SUCCESS(HttpStatus.OK, true, "사용자 수정 성공"),
     USER_DELETE_SUCCESS(HttpStatus.OK, true, "사용자 삭제 성공"),
+    COMPANY_ADDED_SUCCESS(HttpStatus.OK, true, "회사 등록 성공"),
+    USER_APPLIED_COMPANIES_FETCH_SUCCESS(HttpStatus.OK, true, "회사 조회 성공"),
+    COMPANY_DETAIL_FETCH_SUCCESS(HttpStatus.OK, true, "회사 정보 조회 성공"),
+    COMPANY_UPDATE_SUCCESS(HttpStatus.OK, true, "회사 정보 수정 성공"),
+    RESUME_CREATE_SUCCESS(HttpStatus.OK, true, "이력서 작성 성공"),
+    RESUME_DETAIL_FETCH_SUCCESS(HttpStatus.OK, true, "이력서 조회 성공"),
+    STEP_STATUS_UPDATE_SUCCESS(HttpStatus.OK, true, "전형 상태 업데이트 성공"),
+    STEP_LIST_FETCH_SUCCESS(HttpStatus.OK, true, "전형 목록 조회 성공"),
+    REVIEW_CREATE_SUCCESS(HttpStatus.OK, true, "리뷰 작성 성공"),
+    REVIEW_LIST_FETCH_SUCCESS(HttpStatus.OK, true, "리뷰 목록 조회 성공"),
+    RECAP_CREATE_SUCCESS(HttpStatus.OK, true, "Recap 생성 성공"),
+    RECAP_LIST_FETCH_SUCCESS(HttpStatus.OK, true, "Recap 조회 성공"),
 
     // 201 Created
     USER_CREATE_SUCCESS(HttpStatus.CREATED, true, "사용자 생성 성공");

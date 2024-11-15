@@ -37,4 +37,8 @@ public class Step {
         step.isFailed = false;
         return step;
     }
+
+    public void updateStatus(Boolean isFailed) {
+        this.isFailed = isFailed;
+    }
 }
